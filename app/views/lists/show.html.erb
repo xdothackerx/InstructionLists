@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <strong><%= @list.title %></strong>
+</h2>
+
+<p>
+  <%= @list.description %>
+</p>
+
+<h3><strong>Directions:</strong></h3>
+<ol><% @list.steps.each do |step| %>
+  <li><%= step.info %></li>
+<% end %></ol>
+<br />
+<%= link_to 'Add A Step', new_list_step_path(@list) %> |
+<%= link_to 'Show All Steps for All Lists', list_steps_path(@list) %> |
+<%= link_to 'Edit This List', edit_list_path(@list) %> |
+<%= link_to 'Back to Lists', lists_path %>
